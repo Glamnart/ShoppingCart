@@ -1,0 +1,37 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faNairaSign } from "@fortawesome/free-solid-svg-icons"
+import type { ProductProp } from "../utils/types.ts"
+import { products } from "../utils/variables.ts"
+
+
+const Product : React.FC<ProductProp> = ({name,img,price})=>{
+    return(
+        <div className="flex flex-col border border-gray-100 rounded-md w-75">
+            <div>
+                <img className="w-75 h-45 rounded-t-md" src={img} alt={name}/>
+            </div>
+            <div className=" flex flex-row items-center justify-around pl-0.5 pt-6 pb-4 w-75 rounded-b-md border-t border-gray-100" >
+                <div>
+                    <p className="text-white font-bold w-30 text-nowrap text-2xl">{name}</p>
+                    <p className="text-gray-200 text-md"><FontAwesomeIcon icon={faNairaSign}/>{price}.00</p>
+                </div>
+                <button className="border bg-gray-200 border-gray-100 px-3 h-10 text-nowrap text-lg rounded-md hover:bg-green-600 hover:border-0 hover:text-white" >Add to Cart</button>
+            </div>
+        </div>
+    )
+}
+
+const Products: React.FC = ()=>{
+    const printProducts = (products : ProductProp[]) => {
+        const row1: ProductProp[] = products.slice(0,3);
+        const row2: ProductProp[] = products.slice(3);
+
+        return(<div className="flex flex-col justify-between items-center w-screen h-150 pb-10 gap-5">
+            <div className="flex flex-row justify-center gap-8 items-center w-screen">{row1.map(({name,img,price},i) => <Product key={i} name={name} img={img} price={price}/>)}</div>
+            <div className="flex flex-row justify-center gap-8 items-center w-screen">{row2.map(({name,img,price},i) => <Product key={i+2} name={name} img={img} price={price}/>)}</div>
+        </div>)
+    }
+    return printProducts(products);
+}
+
+export default Products;
