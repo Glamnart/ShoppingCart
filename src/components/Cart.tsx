@@ -33,7 +33,7 @@ const CartDropdown = ({clicked,cart,setcart}:CartProp) => {
 
 
 const Cart : React.FC<CartProp> = ({cart,setcart})=>{
-        const [DropDown, setDropDown] = useState(false)
+        const [DropDown, setDropDown] = useState<boolean>(false)
     return <>
         <CartHead clicked = {DropDown} setClicked = {setDropDown} cart={cart}/>
         <CartDropdown cart={cart} clicked={DropDown} setcart={setcart}/>

@@ -35,7 +35,7 @@ const Product : React.FC<ProductProp> = ({name,img,price,cart,setcart},)=>{
 }
 
 const Products: React.FC<ProductsProp> = ({cart,setcart})=>{
-    const printProducts = (products : ProductType[]) => {
+    const printProducts : React.FC<ProductType[]> = (products : ProductType[]) => {
         const row1: ProductType[] = products.slice(0,3);
         const row2: ProductType[] = products.slice(3);
 
