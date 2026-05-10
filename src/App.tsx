@@ -16,8 +16,8 @@ const App:React.FC = () =>{
         cartItem = [];
     }
   const [cartState, setCartState] = useState<cartFields[]>(cartItem)
-  return(<div className='flex flex-col'>
-    <div className="bg-[url('src/assets/headerBackground.webp')] bg-cover bg-no-repeat bg-center bg-black/50 bg-blend-overlay pb-8">
+  return(<div className='flex flex-col h-screen'>
+    <div className="bg-[url('src/assets/headerBackground.webp')] bg-cover bg-no-repeat bg-center bg-black/50 bg-blend-overlay lg:pb-8 h-fit flex-1">
       <Header/>
       <Products  cart={cartState} setcart={setCartState}/>
     </div>
