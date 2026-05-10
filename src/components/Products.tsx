@@ -39,9 +39,9 @@ const Products: React.FC<ProductsProp> = ({cart,setcart})=>{
         const row1: ProductType[] = products.slice(0,3);
         const row2: ProductType[] = products.slice(3);
 
-        return(<div className="flex flex-col justify-between items-center w-screen h-150 pb-10 gap-5">
-            <div className="flex flex-row justify-center gap-8 items-center w-screen">{row1.map(({name,img,price},i) => <Product key={i} name={name} img={img} price={price} cart={cart} setcart={setcart}/>)}</div>
-            <div className="flex flex-row justify-center gap-8 items-center w-screen">{row2.map(({name,img,price},i) => <Product key={i+2} name={name} img={img} price={price} cart={cart} setcart={setcart}/>)}</div>
+        return(<div className="flex flex-col justify-between items-center w-screen pb-10 gap-5 h-fit">
+            <div className="flex lg:flex-row flex-col  justify-center lg:gap-8 gap-2 items-center sm:h-fit w-screen">{row1.map(({name,img,price},i) => <Product key={i} name={name} img={img} price={price} cart={cart} setcart={setcart}/>)}</div>
+            <div className="flex lg:flex-row flex-col justify-center lg:gap-8 gap-2 items-center sm:-fit w-screen">{row2.map(({name,img,price},i) => <Product key={i+2} name={name} img={img} price={price} cart={cart} setcart={setcart}/>)}</div>
         </div>)
     }
     return printProducts(products);
