@@ -1,5 +1,5 @@
-import type { ProductProp } from "./types.ts"
-export const products : ProductProp[] = [
+import type {ProductType} from "./types.ts"
+export const products : ProductType[] = [
     {name: "Apple", img: "src/assets/apples.jpeg", price: 500},
     {name: "Notebook", img: "src/assets/notebooks.jpeg", price: 600},
     {name: "Pot", img: "src/assets/pots.jpeg", price: 5000},
